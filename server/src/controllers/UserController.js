@@ -19,7 +19,7 @@ module.exports = {
         res.send('ลบข้อมูลผู้ใช้' + req.params.userId +" " + JSON.stringify(req.body.name))
     },
 
-    //show user by id
+    //show by id
     show(req,res){
         res.send('ดูข้อมูลผู้ใช้' + req.params.userId)
     },
