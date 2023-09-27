@@ -68,7 +68,7 @@ module.exports = {
   async show (req, res) {
     try {
       const users = await User.findOne({
-        where: {
+        where:{
           id: req.params.userId
         }
       })
