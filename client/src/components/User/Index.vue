@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Get All Users</h1>
+    <p><button v-on:click="logout">Logout</button></p>
     <div>
       <h2>จำนวนผู้ใช้ {{ users.length }}</h2>
     </div>
@@ -28,6 +29,13 @@ export default {
     };
   },
   methods: {
+    logout() {
+      this.$store.dispatch('setToken', null);
+      this.$store.dispatch('setUser', null);
+      this.$router.push({
+        name: 'login'
+      });
+    },
     navigateTo(route) {
       this.$router.push(route)
     },
@@ -60,4 +68,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.error {
+  color: red;
+}
+</style>

@@ -50,7 +50,7 @@
         let userId = this.$route.params.userId
         this.user = (await UsersService.show(userId)).data
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
     }
   };
