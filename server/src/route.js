@@ -1,24 +1,36 @@
-const UserController = require('./controllers/UserController')
 const UserAuthenController = require('./controllers/UserAuthenController')
+const UserController = require('./controllers/UserController')
 const isAuthenController = require('./authen/isAuthenController')
+const MenuController = require('./controllers/MenuController')
 
 module.exports = (app) => {
-    //get all user
-    app.get('/users', UserController.index,UserController.index)
+     // get user by id
+     app.get('/users', UserController.index,UserController.index)
 
-    //create user
-    app.post('/user', UserController.create),
+     // create user
+     app.post('/user', UserController.create)
 
-    //edit user
-    app.put('/user/:userId', UserController.put),
+     // edit user, suspend, active
+     app.put('/user/:userId', UserController.put)
 
-    //delete user
-    app.delete('/user/:userId', UserController.delete),
+     // delete user
+     app.delete('/user/:userId', UserController.delete)
 
-    //show by id
-    app.get('/user/:userId', UserController.show),
+     // get all user
+     app.get('/user/:userId', UserController.show)
 
-    //login
-    app.post('/login', UserAuthenController.login)
-}
+     // login
+     app.post('/login', UserAuthenController.login)
 
+     app.post('/menu', MenuController.create)
+
+     app.get('/menus', MenuController.index)
+
+     app.put('/menus/:menusId', MenuController.put)
+
+     app.delete('/menu/:menuId', MenuController.delete)
+
+     app.get('/menus/:menusId', MenuController.show)
+
+
+}   

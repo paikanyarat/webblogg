@@ -1,51 +1,70 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Test from '@/components/Test'
-import UserIndex from '@/components/User/Index'
-import UserCreate from '@/components/User/CreateUser'
-import UserEdit from '@/components/User/EditUser'
-import UserShow from '@/components/User/ShowUser'
-import Login from '@/components/Login'
+import Vue from "vue";
+import Router from "vue-router";
+// Users
+import UserIndex from "@/components/Users/Index";
+import UserCreate from "@/components/Users/CreateUser";
+import UserEdit from "@/components/Users/EditUser";
+import UserShow from "@/components/Users/ShowUser";
 
-Vue.use(Router)
+import MenuIndex from "@/components/Menus/Index";
+import MenuShow from "@/components/Menus/Showmenu";
+import MenuEdit from "@/components/Menus/Editmenu";
+import MenuCreate from "@/components/Menus/Createmenu";
 
+import Login from "@/components/Login";
+
+Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/test',
-      name: 'test',
-      component: Test
-    },
-    {
-      path: '/users',
-      name: 'users',
+      path: "/users",
+      name: "users",
       component: UserIndex
     },
     {
-      path: '/user/create',
-      name: 'user-create',
+      path: "/user/create",
+      name: "users-create",
       component: UserCreate
     },
     {
-      path: '/user/edit/:userId',
-      name: 'user-edit',
+      path: "/user/edit/:userId",
+      name: "user-edit",
       component: UserEdit
     },
     {
-      path: '/user/:userID',
-      name: 'user',
+      path: "/user/:userId",
+      name: "user",
       component: UserShow
     },
     {
-      path: '/login',
-      name: 'login',
+      path: "/menus",
+      name: "menus",
+      component: MenuIndex
+    },
+    {
+      path: "/menu/create",
+      name: "menu-create",
+      component: MenuCreate
+    },
+    {
+      path: "/menu/edit/:menuId",
+      name: "menu-edit",
+      component: MenuEdit
+    },
+    {
+      path: "/menu/:menusId",
+      name: "menu",
+      component: MenuShow
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login
+    },
+    {
+      path: "/login",
+      name: "login",
       component: Login
     }
   ]
-})
+});
